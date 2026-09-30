@@ -1457,7 +1457,10 @@ public class LatinIME extends InputMethodService implements
                     });
                 }
                 if (switchButton != null) {
-                    switchButton.setOnClickListener(v -> inputGroup.removeView(gifView));
+                    switchButton.setOnClickListener(v -> {
+                        inputGroup.removeView(gifView);
+                        setInputView(onCreateInputView());
+                    });
                 }
                 if (clearButton != null) {
                     clearButton.setOnClickListener(v -> searchInput.setText(""));
@@ -1467,6 +1470,7 @@ public class LatinIME extends InputMethodService implements
                     kotlin.jvm.functions.Function1<String, kotlin.Unit> onGifClick = url -> {
                         onTextInput(url);
                         inputGroup.removeView(gifView);
+                        setInputView(onCreateInputView());
                         return kotlin.Unit.INSTANCE;
                     };
                     kotlin.jvm.functions.Function1<String, kotlin.Unit> onGifLongClick = url -> kotlin.Unit.INSTANCE;
