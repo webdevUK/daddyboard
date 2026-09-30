@@ -1431,15 +1431,15 @@ public class LatinIME extends InputMethodService implements
         if (KeyCode.VOICE_INPUT == event.getKeyCode()) {
             mRichImm.switchToShortcutIme(this);
         } else if (KeyCode.SWITCH_TO_GIFBOARD == event.getKeyCode()) {
-            // Inflate and show native GIF UI instead of switching IMEs
-            android.view.View gifView = getLayoutInflater().inflate(helium314.keyboard.latin.R.layout.gif_search_view, mInputView, false);
             if (mInputView instanceof android.view.ViewGroup) {
+                android.view.ViewGroup inputGroup = (android.view.ViewGroup) mInputView;
+                android.view.View gifView = getLayoutInflater().inflate(helium314.keyboard.latin.R.layout.gif_search_view, inputGroup, false);
                 // Ensure we don't add multiple times
-                android.view.View existing = mInputView.findViewById(helium314.keyboard.latin.R.id.search_bar_container);
+                android.view.View existing = inputGroup.findViewById(helium314.keyboard.latin.R.id.search_bar_container);
                 if (existing != null) {
-                    ((android.view.ViewGroup) mInputView).removeView((android.view.View) existing.getParent());
+                    inputGroup.removeView((android.view.View) existing.getParent());
                 }
-                ((android.view.ViewGroup) mInputView).addView(gifView);
+                inputGroup.addView(gifView);
             }
             // TODO: Wire up search input, RecyclerView, and GifSearcher here
         }
