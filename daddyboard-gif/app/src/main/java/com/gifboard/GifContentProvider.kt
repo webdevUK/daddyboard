@@ -52,7 +52,7 @@ class GifContentProvider : ContentProvider() {
                 gifProvider = GoogleGifFetcher(headlessWebView!!)
             } catch (e: Exception) {
                 Log.e(TAG, "Failed to initialize WebView for GifProvider", e)
-                gifProvider = JsonApiGifProvider(client)
+                gifProvider = JsonApiGifProvider()
             }
         }
         return true
