@@ -32,7 +32,7 @@ class GifSearcher(private val context: Context) {
                     val aspectRatio = if (aspectIdx >= 0) cursor.getFloat(aspectIdx) else 1.0f
 
                     if (url.isNotEmpty()) {
-                        results.add(GifItem(url, thumbUrl, aspectRatio, "source_daddyboard_gif"))
+                        results.add(GifItem(url, thumbUrl, (aspectRatio * 100).toInt(), 100))
                     }
                 }
             }
