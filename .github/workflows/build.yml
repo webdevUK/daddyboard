@@ -23,13 +23,13 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Build DaddyBoard (HeliBoard fork)
-        working-directory: ./heliboard
+        working-directory: ./daddyboard-main
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug
 
       - name: Build DaddyBoard GIF (GifBoard extension)
-        working-directory: ./gifboard
+        working-directory: ./daddyboard-gif
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug
@@ -38,10 +38,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DaddyBoard-APK
-          path: heliboard/app/build/outputs/apk/debug/*.apk
+          path: daddyboard-main/app/build/outputs/apk/debug/*.apk
 
       - name: Upload DaddyBoard GIF APK
         uses: actions/upload-artifact@v4
         with:
           name: DaddyBoard-GIF-APK
-          path: gifboard/app/build/outputs/apk/debug/*.apk
+          path: daddyboard-gif/app/build/outputs/apk/debug/*.apk
