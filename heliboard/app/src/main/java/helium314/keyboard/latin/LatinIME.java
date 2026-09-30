@@ -1431,7 +1431,7 @@ public class LatinIME extends InputMethodService implements
         if (KeyCode.VOICE_INPUT == event.getKeyCode()) {
             mRichImm.switchToShortcutIme(this);
         } else if (KeyCode.SWITCH_TO_GIFBOARD == event.getKeyCode()) {
-            helium314.keyboard.compat.ImeCompat.INSTANCE.switchInputMethod(this, "com.gifboard/com.gifboard.GifBoardService");
+            helium314.keyboard.compat.ImeCompat.INSTANCE.switchInputMethod(this, "com.gifboard/.GifBoardService");
         }
         final InputTransaction completeInputTransaction =
                 mInputLogic.onCodeInput(mSettings.getCurrent(), event,

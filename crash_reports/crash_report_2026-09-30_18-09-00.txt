@@ -1,0 +1,133 @@
+
+Thread: main
+App version: 4.1
+Device: samsung x1q, Android 13
+Locale: en_US
+Stack trace:
+java.lang.RuntimeException: Unknown id: com.gifboard/com.gifboard.GifBoardService
+	at com.android.server.inputmethod.InputMethodManagerService.setInputMethodLocked(InputMethodManagerService.java:4015)
+	at com.android.server.inputmethod.InputMethodManagerService.setInputMethodWithSubtypeIdLocked(InputMethodManagerService.java:5511)
+	at com.android.server.inputmethod.InputMethodManagerService.setInputMethod(InputMethodManagerService.java:4930)
+	at com.android.server.inputmethod.InputMethodManagerService.-$$Nest$msetInputMethod(Unknown Source:0)
+	at com.android.server.inputmethod.InputMethodManagerService$InputMethodPrivilegedOperationsImpl.setInputMethod(InputMethodManagerService.java:7409)
+	at com.android.internal.inputmethod.CompletableFutureUtil.getValueOrRethrowErrorInternal(CompletableFutureUtil.java:52)
+	at com.android.internal.inputmethod.CompletableFutureUtil.getResult(CompletableFutureUtil.java:146)
+	at com.android.internal.inputmethod.InputMethodPrivilegedOperations.setInputMethod(InputMethodPrivilegedOperations.java:223)
+	at android.inputmethodservice.InputMethodService.switchInputMethod(InputMethodService.java:2602)
+	at helium314.keyboard.compat.ImeCompat.switchInputMethod(ImeCompat.kt:23)
+	at helium314.keyboard.latin.LatinIME.onEvent(LatinIME.java:1434)
+	at helium314.keyboard.keyboard.KeyboardActionListenerImpl.onCodeInput(KeyboardActionListenerImpl.kt:151)
+	at helium314.keyboard.latin.LatinIME.onCodeInput(LatinIME.java:1425)
+	at helium314.keyboard.latin.suggestions.SuggestionStripView.onClick$lambda$0(SuggestionStripView.kt:334)
+	at helium314.keyboard.latin.suggestions.SuggestionStripView.$r8$lambda$j0yD5tntLgb-bpvPDHSqYVpPHG4(SuggestionStripView.kt:0)
+	at helium314.keyboard.latin.suggestions.SuggestionStripView$$ExternalSyntheticLambda0.invoke(R8$$SyntheticClass:0)
+	at helium314.keyboard.latin.utils.ToolbarUtilsKt.onClickToolbarKey(ToolbarUtils.kt:260)
+	at helium314.keyboard.latin.suggestions.SuggestionStripView.onClick(SuggestionStripView.kt:334)
+	at android.view.View.performClick(View.java:7892)
+	at android.view.View.performClickInternal(View.java:7869)
+	at android.view.View.-$$Nest$mperformClickInternal(Unknown Source:0)
+	at android.view.View$PerformClick.run(View.java:30891)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+
+Last log:
+2026-09-30 18:08:48.603826 I FoldableUtils: not foldable
+2026-09-30 18:08:48.727370 I startup: Starting helium314.keyboard.debug version 4.1 (4101) on Android 13 (SDK 33)
+2026-09-30 18:08:48.732973 W JniUtils: Could not load system glide typing library jni_latinimegoogle: dlopen failed: library "libjni_latinimegoogle.so" not found
+2026-09-30 18:08:48.749119 I LatinIME: Hardware accelerated drawing: true
+2026-09-30 18:08:48.811039 W InputAttributes: No editor info for this field. Bug?
+2026-09-30 18:08:48.811167 I Settings: loadSettings
+2026-09-30 18:08:48.837011 I DictionaryFacilitatorImpl: resetDictionaries, force reloading main dictionary: false
+2026-09-30 18:08:48.930470 I LatinIME: ringer mode changed, zen_mode on: false
+2026-09-30 18:08:49.554913 D LatinIME: onInitializeInterface
+2026-09-30 18:08:49.564243 I Settings: loadSettings
+2026-09-30 18:08:49.578487 D LatinIME: onStartInputInternal: hint locales [], found matching subtype: false
+2026-09-30 18:08:49.619219 I LatinIME: hideWindow
+2026-09-30 18:08:49.630170 I LatinIME: onFinishInput
+2026-09-30 18:08:49.631566 D LatinIME: onStartInputInternal: hint locales [], found matching subtype: false
+2026-09-30 18:08:53.844942 I LatinIME: onFinishInput
+2026-09-30 18:08:53.845465 D LatinIME: onStartInputInternal: hint locales [], found matching subtype: false
+2026-09-30 18:08:53.994943 I LatinIME: onFinishInput
+2026-09-30 18:08:53.995473 D LatinIME: onStartInputInternal: hint locales [], found matching subtype: false
+2026-09-30 18:08:56.187703 I LatinIME: onFinishInput
+2026-09-30 18:08:56.188291 D LatinIME: onStartInputInternal: hint locales [], found matching subtype: false
+2026-09-30 18:08:58.710717 I LatinIME: onFinishInput
+2026-09-30 18:08:58.711284 D LatinIME: onStartInputInternal: hint locales [], found matching subtype: false
+2026-09-30 18:08:58.711717 D LatinIME: onStartInputInternal: hint locales [], found matching subtype: false
+2026-09-30 18:08:58.725815 D KeyboardSwitcher: create new input view
+2026-09-30 18:08:58.801587 D BogusMoveEventDetector: needsProximateBogusDownMoveUpEventHack=false smallestScreenWidthDp=420 densityDpi=274 screenMetrics=0
+2026-09-30 18:08:58.830987 D BogusMoveEventDetector: needsProximateBogusDownMoveUpEventHack=false smallestScreenWidthDp=420 densityDpi=274 screenMetrics=0
+2026-09-30 18:08:58.844931 D BogusMoveEventDetector: needsProximateBogusDownMoveUpEventHack=false smallestScreenWidthDp=420 densityDpi=274 screenMetrics=0
+2026-09-30 18:08:58.864288 I Settings: loadSettings
+2026-09-30 18:08:58.875370 I LatinIME: Starting input. Cursor position = 0,0
+2026-09-30 18:08:58.876435 D LatinIME: editorInfo: inputType: 0x00008001, imeOptions: 0x02000003, all caps: false, sentence caps: false, word caps: false
+2026-09-30 18:08:58.879328 D KeyboardState: loadLayout(Alphabet{shiftMode=UNSHIFT, autoCapsFlags=none, recapitalizeMode=null})
+2026-09-30 18:08:58.923405 D KeyboardParser: adding key q, 0
+2026-09-30 18:08:58.925549 D KeyboardParser: adding key w, 0
+2026-09-30 18:08:58.925837 D KeyboardParser: adding key e, 0
+2026-09-30 18:08:58.926033 D KeyboardParser: adding key r, 0
+2026-09-30 18:08:58.926183 D KeyboardParser: adding key t, 0
+2026-09-30 18:08:58.926345 D KeyboardParser: adding key y, 0
+2026-09-30 18:08:58.926487 D KeyboardParser: adding key u, 0
+2026-09-30 18:08:58.926657 D KeyboardParser: adding key i, 0
+2026-09-30 18:08:58.926826 D KeyboardParser: adding key o, 0
+2026-09-30 18:08:58.927018 D KeyboardParser: adding key p, 0
+2026-09-30 18:08:58.927180 D KeyboardParser: adding key a, 0
+2026-09-30 18:08:58.927361 D KeyboardParser: adding key s, 0
+2026-09-30 18:08:58.927504 D KeyboardParser: adding key d, 0
+2026-09-30 18:08:58.927662 D KeyboardParser: adding key f, 0
+2026-09-30 18:08:58.927788 D KeyboardParser: adding key g, 0
+2026-09-30 18:08:58.927911 D KeyboardParser: adding key h, 0
+2026-09-30 18:08:58.928043 D KeyboardParser: adding key j, 0
+2026-09-30 18:08:58.928167 D KeyboardParser: adding key k, 0
+2026-09-30 18:08:58.928291 D KeyboardParser: adding key l, 0
+2026-09-30 18:08:58.928871 D KeyboardParser: adding key z, 0
+2026-09-30 18:08:58.929015 D KeyboardParser: adding key x, 0
+2026-09-30 18:08:58.929149 D KeyboardParser: adding key c, 0
+2026-09-30 18:08:58.929288 D KeyboardParser: adding key v, 0
+2026-09-30 18:08:58.929415 D KeyboardParser: adding key b, 0
+2026-09-30 18:08:58.929543 D KeyboardParser: adding key n, 0
+2026-09-30 18:08:58.929683 D KeyboardParser: adding key m, 0
+2026-09-30 18:08:58.931011 D Keyboard.Builder: setting size and position for q, 113: x 0, w 72
+2026-09-30 18:08:58.931095 D Keyboard.Builder: setting size and position for w, 119: x 72, w 72
+2026-09-30 18:08:58.931157 D Keyboard.Builder: setting size and position for e, 101: x 144, w 72
+2026-09-30 18:08:58.931207 D Keyboard.Builder: setting size and position for r, 114: x 216, w 72
+2026-09-30 18:08:58.931259 D Keyboard.Builder: setting size and position for t, 116: x 288, w 72
+2026-09-30 18:08:58.931312 D Keyboard.Builder: setting size and position for y, 121: x 360, w 72
+2026-09-30 18:08:58.931379 D Keyboard.Builder: setting size and position for u, 117: x 432, w 72
+2026-09-30 18:08:58.931427 D Keyboard.Builder: setting size and position for i, 105: x 504, w 72
+2026-09-30 18:08:58.931479 D Keyboard.Builder: setting size and position for o, 111: x 576, w 72
+2026-09-30 18:08:58.931527 D Keyboard.Builder: setting size and position for p, 112: x 648, w 72
+2026-09-30 18:08:58.931646 D Keyboard.Builder: setting size and position for null, -10008: x 0, w 35
+2026-09-30 18:08:58.931696 D Keyboard.Builder: setting size and position for a, 97: x 35, w 72
+2026-09-30 18:08:58.931748 D Keyboard.Builder: setting size and position for s, 115: x 107, w 72
+2026-09-30 18:08:58.931797 D Keyboard.Builder: setting size and position for d, 100: x 179, w 72
+2026-09-30 18:08:58.931846 D Keyboard.Builder: setting size and position for f, 102: x 251, w 72
+2026-09-30 18:08:58.931890 D Keyboard.Builder: setting size and position for g, 103: x 323, w 72
+2026-09-30 18:08:58.931935 D Keyboard.Builder: setting size and position for h, 104: x 395, w 72
+2026-09-30 18:08:58.931985 D Keyboard.Builder: setting size and position for j, 106: x 467, w 72
+2026-09-30 18:08:58.932032 D Keyboard.Builder: setting size and position for k, 107: x 540, w 72
+2026-09-30 18:08:58.932084 D Keyboard.Builder: setting size and position for l, 108: x 612, w 72
+2026-09-30 18:08:58.932132 D Keyboard.Builder: setting size and position for null, -10008: x 684, w 35
+2026-09-30 18:08:58.932186 D Keyboard.Builder: setting size and position for shift_key, -11: x 0, w 108
+2026-09-30 18:08:58.932231 D Keyboard.Builder: setting size and position for z, 122: x 108, w 72
+2026-09-30 18:08:58.932277 D Keyboard.Builder: setting size and position for x, 120: x 180, w 72
+2026-09-30 18:08:58.932323 D Keyboard.Builder: setting size and position for c, 99: x 252, w 72
+2026-09-30 18:08:58.932368 D Keyboard.Builder: setting size and position for v, 118: x 324, w 72
+2026-09-30 18:08:58.932418 D Keyboard.Builder: setting size and position for b, 98: x 396, w 72
+2026-09-30 18:08:58.932465 D Keyboard.Builder: setting size and position for n, 110: x 468, w 72
+2026-09-30 18:08:58.932514 D Keyboard.Builder: setting size and position for m, 109: x 540, w 72
+2026-09-30 18:08:58.932560 D Keyboard.Builder: setting size and position for delete_key, -7: x 612, w 108
+2026-09-30 18:08:58.932610 D Keyboard.Builder: setting size and position for ?123, -10001: x 0, w 108
+2026-09-30 18:08:58.932658 D Keyboard.Builder: setting size and position for ,, 44: x 108, w 72
+2026-09-30 18:08:58.932710 D Keyboard.Builder: setting size and position for space_key, 32: x 180, w 360
+2026-09-30 18:08:58.932761 D Keyboard.Builder: setting size and position for ., 46: x 540, w 72
+2026-09-30 18:08:58.932812 D Keyboard.Builder: setting size and position for search_key, 10: x 612, w 108
+2026-09-30 18:08:58.958360 D LatinIME: onCreateInlineSuggestionsRequest called
+2026-09-30 18:08:59.054244 D LatinIME: onInlineSuggestionsResponse called

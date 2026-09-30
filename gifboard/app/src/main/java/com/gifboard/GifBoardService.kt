@@ -617,15 +617,20 @@ class GifBoardService : InputMethodService() {
             Log.e(TAG, "Failed to query heliboard layout provider", e)
         }
 
-        if (layoutStr.isEmpty()) {
-            layoutStr = "q w e r t y u i o p\n\na s d f g h j k l\n\nz x c v b n m"
-        }
+        // Alphabet keys removed as requested by user.
+
+        // Alphabet keys removed as requested by user.
 
         // Apply background
-        container?.setBackgroundColor(android.graphics.Color.parseColor(bgColor))
+        try {
+            val parsedBgColor = android.graphics.Color.parseColor(bgColor)
+            rootView.setBackgroundColor(parsedBgColor)
+            container?.setBackgroundColor(parsedBgColor)
+            view.findViewById<View>(R.id.history_container)?.setBackgroundColor(parsedBgColor)
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to parse background color: $bgColor", e)
+        }
 
-        val rows = layoutStr.replace("\r\n", "\n").split("\\n\\s*\\n".toRegex()).filter { it.isNotBlank() }
-        
         fun createButton(label: String, weight: Float): Button {
             val b = Button(this)
             b.text = label
@@ -637,29 +642,6 @@ class GifBoardService : InputMethodService() {
             try { b.setBackgroundColor(android.graphics.Color.parseColor(keyColor)) } catch (e: Exception) { }
             b.setTextColor(android.graphics.Color.WHITE)
             return b
-        }
-
-        for (rowStr in rows) {
-            val rowLayout = android.widget.LinearLayout(this)
-            rowLayout.orientation = android.widget.LinearLayout.HORIZONTAL
-            rowLayout.layoutParams = android.widget.LinearLayout.LayoutParams(
-                android.widget.LinearLayout.LayoutParams.MATCH_PARENT,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            
-            val keys = rowStr.split("\n").filter { it.isNotBlank() }
-            for (keyDef in keys) {
-                val label = keyDef.split("\\s+".toRegex())[0] // take first char if space-separated
-                val b = createButton(label, 1f)
-                b.setOnClickListener {
-                    performKeyHaptic()
-                    val start = Math.max(searchInput.selectionStart, 0)
-                    val end = Math.max(searchInput.selectionEnd, 0)
-                    searchInput.text.replace(Math.min(start, end), Math.max(start, end), label)
-                }
-                rowLayout.addView(b)
-            }
-            container?.addView(rowLayout)
         }
 
         // Bottom row for functionality (switch back, space, clear, backspace)
