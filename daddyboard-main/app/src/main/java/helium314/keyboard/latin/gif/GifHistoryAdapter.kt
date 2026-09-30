@@ -1,5 +1,6 @@
 package helium314.keyboard.latin.gif
 
+import helium314.keyboard.latin.R
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View

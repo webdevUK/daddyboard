@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Search GIFs"
-                android:textColor="?attr/colorColorKeyText"
+                android:textColor="#FFFFFF"
                 android:textColorHint="#888888"
                 android:textSize="16sp"
                 android:background="@null"
