@@ -79,7 +79,7 @@ class GifContentProvider : ContentProvider() {
             }
 
             try {
-                val results = runBlocking {
+                val results = runBlocking(kotlinx.coroutines.Dispatchers.Main) {
                     gifProvider.search(q, page, safeSearch, timeout)
                 }
                 
