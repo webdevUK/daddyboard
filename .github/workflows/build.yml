@@ -20,17 +20,29 @@ jobs:
           distribution: 'temurin'
           cache: 'gradle'
 
+      - name: Cache native C++ object files
+        uses: actions/cache@v4
+        with:
+          path: |
+            daddyboard-main/app/.cxx
+            daddyboard-main/app/build
+            daddyboard-gif/app/.cxx
+            daddyboard-gif/app/build
+          key: ${{ runner.os }}-ndk-${{ hashFiles('**/*.cpp', '**/*.h', '**/CMakeLists.txt', '**/Android.mk', '**/Application.mk') }}
+          restore-keys: |
+            ${{ runner.os }}-ndk-
+
       - name: Build DaddyBoard (HeliBoard fork)
         working-directory: ./daddyboard-main
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug --build-cache
+          ./gradlew assembleDebug -x lint -x test --parallel --build-cache -Pandroid.injected.build.abi=arm64-v8a
 
       - name: Build DaddyBoard GIF (GifBoard extension)
         working-directory: ./daddyboard-gif
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug --build-cache
+          ./gradlew assembleDebug -x lint -x test --parallel --build-cache -Pandroid.injected.build.abi=arm64-v8a
 
       - name: Upload DaddyBoard APK
         uses: actions/upload-artifact@v4
