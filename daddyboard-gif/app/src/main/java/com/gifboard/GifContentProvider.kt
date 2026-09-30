@@ -101,7 +101,7 @@ class GifContentProvider : ContentProvider() {
                             .build().toString()
                     }
 
-                    cursor.addRow(arrayOf(
+                    cursor.addRow(arrayOf<Any?>(
                         index.toLong(),
                         proxyUrl,
                         proxyThumbUrl,

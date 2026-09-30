@@ -1,0 +1,72 @@
+build	Build DaddyBoard GIF (GifBoard extension)	﻿2026-09-30T16:21:32.5323903Z ##[group]Run chmod +x gradlew
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.5324266Z ^[[36;1mchmod +x gradlew^[[0m
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.5324547Z ^[[36;1m./gradlew assembleDebug --build-cache^[[0m
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.5388481Z shell: /usr/bin/bash -e {0}
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.5388796Z env:
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.5389119Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.5389679Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.5390086Z ##[endgroup]
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.6411594Z Fetching distribution.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:32.6417077Z Downloading https://services.gradle.org/distributions/gradle-9.5.1-bin.zip
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:34.4713229Z .............10%.............20%..............30%.............40%.............50%..............60%.............70%..............80%.............90%.............100%
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6548458Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6554619Z Welcome to Gradle 9.5.1!
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6555078Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6556610Z Here are the highlights of this release:
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6564098Z  - Task provenance in reports and failure messages
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6565657Z  - Type-safe accessors for precompiled Kotlin Settings plugins
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6566282Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6567758Z For more details see https://docs.gradle.org/9.5.1/release-notes.html
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.6568329Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:35.7550002Z Starting a Gradle Daemon (subsequent builds will be faster)
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:21:38.0552584Z Calculating task graph as no cached configuration is available for tasks: assembleDebug
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:32.0609458Z > Task :app:preBuild UP-TO-DATE
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:32.0610361Z > Task :app:preDebugBuild UP-TO-DATE
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:32.0610957Z > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:32.0615580Z > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:34.9543157Z > Task :app:checkDebugAarMetadata
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:35.1543158Z > Task :app:processDebugNavigationResources
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:35.2550278Z > Task :app:compileDebugNavigationResources
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:35.2551403Z > Task :app:generateDebugResValues
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:35.3545635Z > Task :app:mapDebugSourceSetPaths
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:35.3552585Z > Task :app:generateDebugResources
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:38.2542115Z > Task :app:mergeDebugResources
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:38.2544393Z > Task :app:packageDebugResources
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:39.7546507Z > Task :app:parseDebugLocalResources
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:39.7547775Z > Task :app:createDebugCompatibleScreenManifests
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:39.7558885Z > Task :app:extractDeepLinksDebug
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:40.0541560Z > Task :app:processDebugMainManifest
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:40.2552913Z > Task :app:processDebugManifest
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:40.2560312Z > Task :app:processDebugManifestForPackage
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:42.1542499Z > Task :app:processDebugResources
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.2546615Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.2549464Z > Task :app:compileDebugKotlin
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.2552362Z e: file:///home/runner/work/daddyboard/daddyboard/daddyboard-gif/app/src/main/java/com/gifboard/GifContentProvider.kt:104:35 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>?' & 'Serializable?']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3552959Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3553034Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3565608Z FAILURE: Build failed with an exception.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3566256Z > Task :app:compileDebugKotlin FAILED
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3567145Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3567165Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3568388Z [Incubating] Problems report is available at: file:///home/runner/work/daddyboard/daddyboard/daddyboard-gif/build/reports/problems/problems-report.html
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3572817Z * What went wrong:
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3573848Z Execution failed for task ':app:compileDebugKotlin' (registered by plugin 'kotlin-android').
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3577703Z > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.btapi.BuildToolsApiCompilationWork
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3582269Z    > Compilation error. See log for more details
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3582684Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3583427Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3584496Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3586871Z * Try:
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3587088Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3587966Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3589764Z > Run with --stacktrace option to get the stack trace.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3592985Z > Run with --info or --debug option to get more log output.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3593440Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3594549Z For more on this, please refer to https://docs.gradle.org/9.5.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3596659Z > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3597501Z 16 actionable tasks: 16 executed
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3598296Z > Get more help at https://help.gradle.org.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3598966Z Configuration cache entry stored.
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3599522Z 
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.3600017Z BUILD FAILED in 1m 21s
+build	Build DaddyBoard GIF (GifBoard extension)	2026-09-30T16:22:54.8403405Z ##[error]Process completed with exit code 1.
