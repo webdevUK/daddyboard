@@ -27,7 +27,6 @@ class GifContentProvider : ContentProvider() {
 
     private lateinit var client: OkHttpClient
     private lateinit var gifProvider: GifProvider
-    private var headlessWebView: WebView? = null
 
     override fun onCreate(): Boolean {
         client = OkHttpClient.Builder()
@@ -35,26 +34,7 @@ class GifContentProvider : ContentProvider() {
             .readTimeout(10, TimeUnit.SECONDS)
             .build()
         
-        // Ensure webview operations run on main thread if needed
-        android.os.Handler(android.os.Looper.getMainLooper()).post {
-            try {
-                headlessWebView = WebView(context!!)
-                headlessWebView?.settings?.javaScriptEnabled = true
-                headlessWebView?.settings?.domStorageEnabled = true
-                val cookieManager = CookieManager.getInstance()
-                cookieManager.setAcceptCookie(true)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    cookieManager.setAcceptThirdPartyCookies(headlessWebView, true)
-                }
-                cookieManager.setCookie(".google.com", GoogleConsentCookies.buildConsentCookie())
-                cookieManager.setCookie(".google.com", GoogleConsentCookies.buildSocsCookie())
-                
-                gifProvider = GoogleGifFetcher(headlessWebView!!)
-            } catch (e: Exception) {
-                Log.e(TAG, "Failed to initialize WebView for GifProvider", e)
-                gifProvider = JsonApiGifProvider()
-            }
-        }
+        gifProvider = JsonApiGifProvider()
         return true
     }
 
@@ -73,13 +53,8 @@ class GifContentProvider : ContentProvider() {
 
             val cursor = MatrixCursor(arrayOf("_id", "url", "thumbnail_url", "aspect_ratio"))
             
-            // Wait for gifProvider to be initialized
-            while (!::gifProvider.isInitialized) {
-                Thread.sleep(100)
-            }
-
             try {
-                val results = runBlocking(kotlinx.coroutines.Dispatchers.Main) {
+                val results = runBlocking {
                     gifProvider.search(q, page, safeSearch, timeout)
                 }
                 
