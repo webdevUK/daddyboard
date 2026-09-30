@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.gifboard
+package helium314.keyboard.latin.gif
 
 import android.content.Context
 import android.util.AttributeSet

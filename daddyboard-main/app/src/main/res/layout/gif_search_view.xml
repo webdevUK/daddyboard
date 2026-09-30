@@ -13,7 +13,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingHorizontal="8dp"
-        android:background="@drawable/search_bar_background"
+        android:background="@android:color/transparent"
         android:clickable="true"
         android:focusable="true">
 
@@ -21,7 +21,7 @@
             android:id="@+id/settings_button"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_settings"
+            android:src="@android:drawable/ic_menu_manage"
             android:contentDescription="Settings"
             android:layout_marginEnd="8dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
@@ -37,8 +37,8 @@
                 android:id="@+id/search_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/search_hint"
-                android:textColor="@color/key_text"
+                android:hint="Search GIFs"
+                android:textColor="?attr/colorColorKeyText"
                 android:textColorHint="#888888"
                 android:textSize="16sp"
                 android:background="@null"
@@ -48,7 +48,7 @@
                 android:clickable="false"
                 android:longClickable="false"
                 android:cursorVisible="true"
-                android:textCursorDrawable="@drawable/active_indicator"
+                android:textCursorDrawable="@android:color/holo_blue_light"
                 android:maxLines="1" />
                 
             <!-- Overlay to capture clicks when inactive -->
@@ -75,7 +75,7 @@
             android:id="@+id/switch_button"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_exit"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
             android:contentDescription="Switch keyboard"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:alpha="0.7"
@@ -124,7 +124,7 @@
                     android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
-                    android:background="@color/history_header_background">
+                    android:background="@android:color/darker_gray">
 
                     <TextView
                         android:id="@+id/tab_searches"

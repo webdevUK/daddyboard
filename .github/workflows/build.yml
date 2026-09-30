@@ -18,21 +18,19 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+          cache: 'gradle'
 
       - name: Build DaddyBoard (HeliBoard fork)
         working-directory: ./daddyboard-main
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --build-cache
 
       - name: Build DaddyBoard GIF (GifBoard extension)
         working-directory: ./daddyboard-gif
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --build-cache
 
       - name: Upload DaddyBoard APK
         uses: actions/upload-artifact@v4

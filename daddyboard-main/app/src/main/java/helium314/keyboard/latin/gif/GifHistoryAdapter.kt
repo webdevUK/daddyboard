@@ -1,4 +1,4 @@
-package com.gifboard
+package helium314.keyboard.latin.gif
 
 import android.net.Uri
 import android.view.LayoutInflater

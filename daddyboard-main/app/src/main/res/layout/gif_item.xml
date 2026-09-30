@@ -6,21 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.cardview.widget.CardView
+    <FrameLayout
         android:id="@+id/gif_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@android:color/transparent"
+        android:background="@android:color/transparent"
         android:layout_margin="2dp">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.gifboard.AspectRatioDraweeView
+            <helium314.keyboard.latin.gif.AspectRatioDraweeView
                 android:id="@+id/gif_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,6 +45,6 @@
 
         </FrameLayout>
 
-    </androidx.cardview.widget.CardView>
+    </FrameLayout>
 
 </FrameLayout>

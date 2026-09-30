@@ -1,4 +1,4 @@
-package com.gifboard
+package helium314.keyboard.latin.gif
 
 /**
  * Data class representing a GIF item with its URL and dimensions.

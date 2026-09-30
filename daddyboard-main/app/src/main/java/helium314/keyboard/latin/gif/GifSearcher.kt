@@ -3,7 +3,6 @@ package helium314.keyboard.latin.gif
 import android.content.Context
 import android.net.Uri
 import android.util.Log
-import com.gifboard.GifItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
