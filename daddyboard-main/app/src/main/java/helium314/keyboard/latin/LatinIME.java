@@ -1440,8 +1440,70 @@ public class LatinIME extends InputMethodService implements
                     inputGroup.removeView((android.view.View) existing.getParent());
                 }
                 inputGroup.addView(gifView);
+
+                android.view.View searchOverlay = gifView.findViewById(helium314.keyboard.latin.R.id.search_overlay);
+                android.widget.EditText searchInput = gifView.findViewById(helium314.keyboard.latin.R.id.search_input);
+                android.widget.ImageButton clearButton = gifView.findViewById(helium314.keyboard.latin.R.id.clear_button);
+                android.widget.ImageButton switchButton = gifView.findViewById(helium314.keyboard.latin.R.id.switch_button);
+                androidx.recyclerview.widget.RecyclerView gifRecycler = gifView.findViewById(helium314.keyboard.latin.R.id.gif_recycler);
+
+                if (searchOverlay != null) {
+                    searchOverlay.setOnClickListener(v -> {
+                        searchOverlay.setVisibility(android.view.View.GONE);
+                        searchInput.setFocusable(true);
+                        searchInput.setFocusableInTouchMode(true);
+                        searchInput.setClickable(true);
+                        searchInput.requestFocus();
+                    });
+                }
+                if (switchButton != null) {
+                    switchButton.setOnClickListener(v -> inputGroup.removeView(gifView));
+                }
+                if (clearButton != null) {
+                    clearButton.setOnClickListener(v -> searchInput.setText(""));
+                }
+                if (gifRecycler != null) {
+                    gifRecycler.setLayoutManager(new androidx.recyclerview.widget.StaggeredGridLayoutManager(2, androidx.recyclerview.widget.StaggeredGridLayoutManager.VERTICAL));
+                    kotlin.jvm.functions.Function1<String, kotlin.Unit> onGifClick = url -> {
+                        onTextInput(url);
+                        inputGroup.removeView(gifView);
+                        return kotlin.Unit.INSTANCE;
+                    };
+                    kotlin.jvm.functions.Function1<String, kotlin.Unit> onGifLongClick = url -> kotlin.Unit.INSTANCE;
+                    helium314.keyboard.latin.gif.GifAdapter adapter = new helium314.keyboard.latin.gif.GifAdapter(onGifClick, onGifLongClick);
+                    gifRecycler.setAdapter(adapter);
+
+                    java.util.function.Consumer<String> performSearch = query -> {
+                        new Thread(() -> {
+                            java.util.List<helium314.keyboard.latin.gif.GifItem> items = new java.util.ArrayList<>();
+                            try {
+                                android.net.Uri uri = android.net.Uri.parse("content://com.gifboard.provider/search").buildUpon().appendQueryParameter("q", query).build();
+                                android.database.Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+                                if (cursor != null) {
+                                    while (cursor.moveToNext()) {
+                                        String url = cursor.getString(cursor.getColumnIndexOrThrow("url"));
+                                        String thumbUrl = cursor.getString(cursor.getColumnIndexOrThrow("thumbnail_url"));
+                                        float aspectRatio = cursor.getFloat(cursor.getColumnIndexOrThrow("aspect_ratio"));
+                                        items.add(new helium314.keyboard.latin.gif.GifItem(url, thumbUrl, (int)(aspectRatio * 100), 100));
+                                    }
+                                    cursor.close();
+                                }
+                            } catch (Exception e) {
+                                android.util.Log.e("LatinIME", "Error searching GIFs", e);
+                            }
+                            new android.os.Handler(android.os.Looper.getMainLooper()).post(() -> adapter.setGifs(items));
+                        }).start();
+                    };
+
+                    searchInput.setOnEditorActionListener((v, actionId, e) -> {
+                        String query = v.getText().toString();
+                        if (!query.isEmpty()) performSearch.accept(query);
+                        return true;
+                    });
+
+                    performSearch.accept("trending");
+                }
             }
-            // TODO: Wire up search input, RecyclerView, and GifSearcher here
         }
         final InputTransaction completeInputTransaction =
                 mInputLogic.onCodeInput(mSettings.getCurrent(), event,
