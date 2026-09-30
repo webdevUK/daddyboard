@@ -1,0 +1,45 @@
+name: Build DaddyBoard and DaddyBoard GIF
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Build DaddyBoard (HeliBoard fork)
+        working-directory: ./heliboard
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Build DaddyBoard GIF (GifBoard extension)
+        working-directory: ./gifboard
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload DaddyBoard APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: DaddyBoard-APK
+          path: heliboard/app/build/outputs/apk/debug/*.apk
+
+      - name: Upload DaddyBoard GIF APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: DaddyBoard-GIF-APK
+          path: gifboard/app/build/outputs/apk/debug/*.apk

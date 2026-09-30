@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.PreferenceCategory app:title="Search Settings">
+
+        <SeekBarPreference
+            app:defaultValue="2"
+            app:key="gif_columns"
+            android:max="4"
+            app:min="1"
+            app:showSeekBarValue="true"
+            app:title="GIF Result Columns" />
+
+        <ListPreference
+            app:defaultValue="webview"
+            app:entries="@array/gif_provider_entries"
+            app:entryValues="@array/gif_provider_values"
+            app:key="gif_provider"
+            app:summary="Select the GIF search backend"
+            app:title="Search Method"
+            app:useSimpleSummaryProvider="true" />
+
+        <SeekBarPreference
+            app:defaultValue="5"
+            app:key="search_timeout"
+            android:max="15"
+            app:min="1"
+            app:showSeekBarValue="true"
+            app:title="@string/pref_search_timeout_title"
+            app:summary="@string/pref_search_timeout_summary" />
+
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="link_on_long_press"
+            app:title="Insert Link on Long Press"
+            app:summary="Long press a GIF to insert its URL" />
+
+        <ListPreference
+            app:defaultValue="medium"
+            app:entries="@array/vibration_entries"
+            app:entryValues="@array/vibration_values"
+            app:key="vibration_strength"
+            app:title="Vibration Strength"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:key="advanced_settings"
+            app:title="Advanced Settings"
+            app:summary="Content Filtering" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory app:title="GIF Insertion">
+
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="live_previews"
+            app:title="Live Previews"
+            app:summary="Load animated GIFs in results (enable to detect broken GIFs)" />
+
+        <ListPreference
+            app:defaultValue="hide"
+            app:entries="@array/broken_gif_entries"
+            app:entryValues="@array/broken_gif_values"
+            app:key="broken_gif_behavior"
+            app:title="@string/pref_broken_gif_title"
+            app:dependency="live_previews"
+            app:useSimpleSummaryProvider="true" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory app:title="Setup">
+
+        <Preference
+            app:key="restart_tutorial"
+            app:title="@string/tutorial_restart"
+            app:summary="@string/tutorial_restart_summary" />
+
+        <Preference
+            app:key="check_updates"
+            app:title="Check for Updates"
+            app:summary="Download the latest release from GitHub" />
+
+    </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>
+
