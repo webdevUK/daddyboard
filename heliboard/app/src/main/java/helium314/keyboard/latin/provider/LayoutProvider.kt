@@ -6,7 +6,7 @@ import android.database.Cursor
 import android.database.MatrixCursor
 import android.net.Uri
 import helium314.keyboard.latin.settings.Settings
-import helium314.keyboard.latin.utils.KtxKt.prefs
+import helium314.keyboard.latin.utils.prefs
 import helium314.keyboard.latin.utils.LayoutType
 import helium314.keyboard.latin.utils.LayoutUtils
 
